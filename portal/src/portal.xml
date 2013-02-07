@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <package name="portal" namespace="/portal" extends="struts-default">
+		
+		<action name="editAccount" class="com.portal.action.RetrieveAccountAction">
+            <result>/portal/editAccount.jsp</result>
+        </action>
+        
+        <action name="saveAccount" class="com.portal.action.SaveAccountAction">
+        	<result name="input">/portal/editAccount.jsp</result>
+        	<result name="success" type="redirectAction">viewProduct</result>
+        </action>
+        
+        <action name="viewAccount" class="com.portal.action.ViewAccountAction">
+        	<result>/portal/viewAccount.jsp</result>
+        </action>
+        
+        <action name="viewProduct" class="com.portal.action.ViewProductAction">
+        	<result>/portal/viewProductMenu.jsp</result>
+        </action>
+        
+                
+    </package>
+    
+</struts>
