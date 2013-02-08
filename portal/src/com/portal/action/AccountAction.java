@@ -1,16 +1,13 @@
 
 package com.portal.action;
+//Account by Mahesh
+import org.apache.struts2.interceptor.ServletRequestAware;
+import org.apache.struts2.interceptor.ServletResponseAware;
 
 import com.app.context.AppContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.portal.service.AccountService;
 import com.portal.util.GenericUtils;
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
-import org.apache.struts2.interceptor.ServletRequestAware;
-import org.apache.struts2.interceptor.ServletResponseAware;
 
 public class AccountAction extends ActionSupport
 implements ServletRequestAware, ServletResponseAware 
