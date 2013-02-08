@@ -1,5 +1,5 @@
 package com.portal.dao;
-
+//comment by Ashish
 import com.portal.domain.Role;
 import com.portal.exception.DAOException;
 
