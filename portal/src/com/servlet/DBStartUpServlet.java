@@ -1,5 +1,5 @@
 package com.servlet;
-
+//Comment in servlet
 import com.app.context.AppContext;
 import com.portal.dao.HibernateUtil;
 
