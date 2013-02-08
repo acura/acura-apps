@@ -17,7 +17,7 @@ import com.portal.action.AccountAction;
 import com.portal.domain.Account;
 import com.portal.domain.PortalConstant;
 import com.portal.util.GenericUtils;
-
+//swati
 public class LoginAction extends AccountAction
 implements ServletRequestAware,ServletResponseAware, ServletContextAware
 {
