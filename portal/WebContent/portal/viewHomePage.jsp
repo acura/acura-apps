@@ -100,7 +100,7 @@
 	        <table class="mainTable" border="2" cellpadding="0" cellspacing="0">
 				<tr>
 	        		<td colspan="2" class="screenHeader" align="center" >
-	              	<span class="screenHeaderSpan" style="text-align:center;font:italic bold 12px/30px Georgia, serif;padding-left:37%;font-weight: bold; color:white;" ><marquee behavior="slide" direction="left" scrollamount="30" id="mymarquee2"> Health Care Plus -  A Product of <a href="#" onclick="window.open('http://www.acurasoftwares.com','AcuraSoftwares', 'addressbar=1,menubar=1,resizable=1,location=1,status=1,scrollbars=1,width=1300,height=900,left=0,top=0');">Acura Softwares</a>  </marquee></span>
+	              	<span class="screenHeaderSpan" style="text-align:center;font:italic bold 12px/30px Georgia, serif;padding-left:37%;font-weight: bold; color:white;" ><marquee behavior="slide" direction="left" scrollamount="30" id="mymarquee2"> Health Care Plus -  A Product of <a href="#" onclick="window.open('http://sarathisoftech.com/','Sarathi Softech', 'addressbar=1,menubar=1,resizable=1,location=1,status=1,scrollbars=1,width=1300,height=900,left=0,top=0');">Sarathi Softech Pvt. Ltc.</a>  </marquee></span>
 					</td>
 				</tr>
 			    <tr>

@@ -4,17 +4,14 @@ import com.portal.domain.Account;
 import com.portal.util.DateUtils;
 import com.portal.util.GenericUtils;
 
-public class RetrieveAccountAction extends AccountAction
-{
-	public String execute() throws Exception
-	{
-		
+public class RetrieveAccountAction extends AccountAction {
+	public String execute() throws Exception {
+
 		String accountId = getServletRequest().getParameter("accountId");
-		
-		if (GenericUtils.isNotNullOrEmpty(accountId))
-		{
+
+		if (GenericUtils.isNotNullOrEmpty(accountId)) {
 			Account account = getAccountService().getAccountByAccountId(accountId);
-			
+
 			setOid(account.getOid());
 			setAccountId(account.getAccountId());
 			setPassword(account.getPassword());
@@ -33,9 +30,11 @@ public class RetrieveAccountAction extends AccountAction
 			setCreatedDate(DateUtils.getDateAsString(account.getCreatedDate()));
 			setLastUpdatedBy(account.getLastUpdatedBy());
 			setLastUpdatedDate(DateUtils.getDateAsString(account.getLastUpdatedDate()));
-			
+
 		}
-		
+
 		return SUCCESS;
 	}
+	
+	
 }

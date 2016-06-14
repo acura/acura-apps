@@ -5,17 +5,15 @@ import com.portal.domain.Account;
 import java.util.ArrayList;
 import java.util.Collection;
 
-public class ViewAccountAction extends AccountAction 
-{
-	public String execute() throws Exception
-	{
+public class ViewAccountAction extends AccountAction {
+	public String execute() throws Exception {
+		System.out.println("viewAccountAction.......................................");
 		Collection<Account> accountList = getAccountService().getAllPortalAccount();
-		
-		if (accountList == null)
-		{
+
+		if (accountList == null) {
 			accountList = new ArrayList<Account>();
 		}
-		
+
 		getServletRequest().setAttribute("accountList", accountList);
 		return SUCCESS;
 	}

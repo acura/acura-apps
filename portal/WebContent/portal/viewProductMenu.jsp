@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Sign On</title>
+<title>Products</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
 	<sx:head parseContent="true"/>
@@ -102,12 +102,15 @@ function goToLogin()
                       <td><img src="${pageContext.request.contextPath}/images/portalImage/header_img2.jpg" width="626" height="359" /></td>
                     </tr>
                     <tr>
-                      <td bgcolor="#FFFFFF"><span class="style71">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Us Call: 020-3267 0355 , 94230 04767<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: amol.gadre@acurasoftwares.com</span></td>
+                      <td bgcolor="#FFFFFF"><span class="style71">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Us: 020-3267 0355 , 94230 04767<br />
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: amol.gadre@sarathisoftech.com</span></td>
                       <td><img src="${pageContext.request.contextPath}/images/portalImage/header2_img2.jpg" width="626" height="40" /></td>
                     </tr>
                   </table></td>
                 </tr>
+                <tr><td>
+					
+				</td></tr>
                 <tr>
                   <td><table width="100%" border="0" cellspacing="0" cellpadding="0">
                     <tr>
@@ -142,53 +145,62 @@ function goToLogin()
                         <tr>
                           <td bgcolor="#FFFFFF">&nbsp;</td>
                           <td width="996" bgcolor="#FFFFFF"><table width="100%" border="0" cellpadding="0" cellspacing="0" background="../images/portalImage/blue_text_box_bg3.jpg">
+                            
                             <tr>
-                              <td width="17" background="../images/portalImage/box_top_bg.jpg"><img src="${pageContext.request.contextPath}/images/portalImage/text_box_left_corner.png" width="3" height="34" /></td>
+                              <td width="17" background="../images/portalImage/box_top_bg.jpg"><img src="${pageContext.request.contextPath}/images/portalImage/text_box_left_corner.png" width="4" height="34" /></td>
                               <td width="962" align="center" background="../images/portalImage/box_top_bg.jpg" class="style65">Applications</td>
                               <td width="17" align="right" background="../images/portalImage/box_top_bg.jpg"><img src="${pageContext.request.contextPath}/images/portalImage/text_box_right_corner.png" width="4" height="34" /></td>
                             </tr>
+                            
                             <tr>
                               <td>&nbsp;</td>
                               <td><table width="99%" border="1" cellpadding="0" cellspacing="1" bordercolor="#66C2CF">
                                   
                                   <tr>
-                                    <td height="60" colspan="2" align="right" valign="top" class="style57">
-                                    <a href="http://www.acura-apps.com/prolab-web">
+                                  <td align="center" class="style57" width="300" > Subscription Ends On:<%= session.getAttribute("subscriptionEndDate") %></td>
+                                    <td height="60" colspan="2" align="right" valign="top" class="style57" >
+                                    
+                                    <a href="http://hms.sarathisoftech.com/hms-web/hms/prolabLogin" target="_blank">
                                     	<img src="${pageContext.request.contextPath}/images/portalImage/pro_lab_header_img.jpg" width="304" height="60" />
                                    	</a>
                                    	</td>
                                   </tr>
-                                  <tr>
+                                 <%-- <tr>
                                     <td height="10" colspan="6" background="../images/portalImage/table_bg3.jpg"></td>
                                     </tr>
-                                  <tr>
+                                   <tr>
                                     <td height="60" colspan="2" align="right" valign="top"  class="style57">
-                                    	<a href="http://www.acura-apps.com/gensoft-web">
+                                    	<a href="http://localhost:8080/hms-web/login/login.action?optionParam=HEALTH_CARE_PLUS" target="_blank" >
                                     		<img src="${pageContext.request.contextPath}/images/portalImage/health-care-plus.jpg" width="304" height="60" />
                                    		</a>
                                    	</td>
-                                  </tr>
+                                  </tr> 
                                   <tr>
                                     <td height="10" colspan="6" background="../images/portalImage/table_bg3.jpg"></td>
-                                    </tr>
+                                  </tr>--%>
                                   <tr>
+                                  <td align="center" class="style57" width="300" > Subscription Ends On:<%= session.getAttribute("subscriptionEndDate") %></td>
                                     <td height="60" colspan="2" align="right" class="style57">
-                                    	<a href="http://www.acura-apps.com/hms-web">
+                                    	<a href="http://hms.sarathisoftech.com/hms-web/login/login.action?optionParam=GYNOSOFt_PLUS" target="_blank">
                                     		<img src="${pageContext.request.contextPath}/images/portalImage/gynosoft_table_img.jpg" width="304" height="60" />
                                     	</a>                                      
                                    	</td>
                                   </tr>
                                   <tr>
+                                  <td height="60" colspan="2" align="center" class="style57">
+                                  <a href="logout.action" onclick="" role="button" class="btn" id="logout" data-toggle="modal">
+					<img src="../images/logout.png" width="117" height="34" /></a>
+                                  </tr>
+                                  <tr>
                                    <td height="10" colspan="6" background="../images/portalImage/table_bg3.jpg"></td>
                                     </tr>
-                                  <tr>
+                                 <%--  <tr>
                                     <td height="60" colspan="2" align="right" valign="top" >
-                                    	<a href="http://www.acura-apps.com/prescript-web">
+                                    	<a href="http://localhost:8080/hms-web/login/login.action?optionParam=true" target="_blank" >
                                     		<img src="${pageContext.request.contextPath}/images/portalImage/easy-prescription-img.jpg" width="304" height="60" />
                                     	</a>
                                     </td>
-                                   
-                                  </tr>
+                                  </tr> --%>
                               </table></td>
                               <td>&nbsp;</td>
                             </tr>

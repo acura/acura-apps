@@ -1,6 +1,6 @@
 package com.portal.service;
 
-/**Copyright © 2010 by Acura Softwares, Pune, India.
+/**Copyright ï¿½ 2010 by Acura Softwares, Pune, India.
  * RoleService : RoleService Class
  */
 
@@ -15,36 +15,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-public class RoleService 
-{
+public class RoleService {
 	@Autowired
 	private RoleDAO roleDAO;
-	
-	@Transactional(propagation=Propagation.REQUIRED)
-	public boolean saveHMSRole(Role user)
-	throws DAOException
-	{
+
+	@Transactional(propagation = Propagation.REQUIRED)
+	public boolean saveHMSRole(Role user) throws DAOException {
 		return roleDAO.saveHMSRole(user);
 	}
 
-	@Transactional(readOnly=true)
-	public Role getRoleByOid(Integer oid)
-	throws DAOException
-	{
+	@Transactional(readOnly = true)
+	public Role getRoleByOid(Integer oid) throws DAOException {
 		return roleDAO.getRoleByOid(oid);
 	}
-	
-	@Transactional(readOnly=true)
-	public Collection<Role> getRoles()
-	throws DAOException
-	{
+
+	@Transactional(readOnly = true)
+	public Collection<Role> getRoles() throws DAOException {
 		return roleDAO.getRoles();
 	}
 
-	@Transactional(readOnly=true)
-	public List<String> getSelectedPermissionListByOid(Integer oid)
-	throws DAOException
-	{
+	@Transactional(readOnly = true)
+	public List<String> getSelectedPermissionListByOid(Integer oid) throws DAOException {
 		return roleDAO.getSelectedPermissionListByOid(oid);
 	}
 

@@ -1,41 +1,32 @@
 package com.portal.domain;
 
-public class RolePermission 
-{
+public class RolePermission {
 	private Integer oid;
 	private String permissionName;
 	private Role role;
-	
-	public Integer getOid() 
-	{
+
+	public Integer getOid() {
 		return oid;
 	}
-	
-	public void setOid(Integer oid) 
-	{
+
+	public void setOid(Integer oid) {
 		this.oid = oid;
 	}
-	
-	public String getPermissionName() 
-	{
+
+	public String getPermissionName() {
 		return permissionName;
 	}
-	
-	public void setPermissionName(String permissionName) 
-	{
+
+	public void setPermissionName(String permissionName) {
 		this.permissionName = permissionName;
 	}
-	
-	public Role getRole() 
-	{
+
+	public Role getRole() {
 		return role;
 	}
-	
-	public void setRole(Role role) 
-	{
+
+	public void setRole(Role role) {
 		this.role = role;
 	}
-	
-	
-}
 
+}

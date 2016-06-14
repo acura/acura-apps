@@ -16,6 +16,7 @@
         
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
 		
 		<!-- JDBC connection pool (use the built-in) -->
 		<!--property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
@@ -34,6 +35,9 @@
 		<property name="hibernate.cache.use_second_level_cache">false</property>
 
 		<mapping resource="portal-account.hbm.xml"/>
+		<mapping resource="hms-role.hbm.xml"/>
+		<mapping resource="hms-role-permissions.hbm.xml"/>
+		
 				
 		</session-factory>    
 </hibernate-configuration>

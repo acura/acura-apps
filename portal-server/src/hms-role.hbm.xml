@@ -3,7 +3,7 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.hms.domain.Role" table="hms_role">
+	<class name="com.portal.domain.Role" table="hms_role">
 		
 		<id name="oid" type="int" column="oid">
 	   		<generator class="increment"/>
@@ -20,8 +20,11 @@
 	  	<list name="rolePermission" cascade="all" table="hms_role_permissions">
             <key column="oid" update="false" />
             <index column="permission_name" />
-            <one-to-many class="com.hms.domain.RolePermission"/>
+            
+        	<one-to-many class="com.portal.domain.RolePermission"/>
         </list>
+        
+        <many-to-one name="account" lazy="false" class="com.portal.domain.Account" column="account_id"/>
 	  	
 	</class>
 </hibernate-mapping>

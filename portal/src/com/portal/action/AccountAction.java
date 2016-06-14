@@ -1,5 +1,9 @@
 //Mahesh
 package com.portal.action;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 //Account by Mahesh
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
@@ -9,9 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 import com.portal.service.AccountService;
 import com.portal.util.GenericUtils;
 
-public class AccountAction extends ActionSupport
-implements ServletRequestAware, ServletResponseAware 
-{
+public class AccountAction extends ActionSupport implements ServletRequestAware, ServletResponseAware {
 	private Integer oid;
 	private String accountId;
 	private String password;
@@ -30,222 +32,208 @@ implements ServletRequestAware, ServletResponseAware
 	private String createdDate;
 	private String lastUpdatedBy;
 	private String lastUpdatedDate;
-	
+
 	private HttpServletResponse servletResponse;
 	private HttpServletRequest servletRequest;
-	
-	public AccountService getAccountService()
-	{
-		return (AccountService)AppContext.getApplicationContext().getBean("accountService");
+
+	public AccountService getAccountService() {
+		return (AccountService) AppContext.getApplicationContext().getBean("accountService");
 	}
-	
-	public Integer getOid()
-	{
+
+	public Integer getOid() {
 		return oid;
 	}
-	public void setOid(Integer oid)
-	{
+
+	public void setOid(Integer oid) {
 		this.oid = oid;
 	}
-	public String getAccountId()
-	{
+
+	public String getAccountId() {
 		return accountId;
 	}
-	public void setAccountId(String accountId)
-	{
+
+	public void setAccountId(String accountId) {
 		this.accountId = accountId;
 	}
-	public String getPassword()
-	{
+
+	public String getPassword() {
 		return password;
 	}
-	public void setPassword(String password)
-	{
+
+	public void setPassword(String password) {
 		this.password = password;
 	}
-	public String getOwnerName()
-	{
+
+	public String getOwnerName() {
 		return ownerName;
 	}
-	public void setOwnerName(String ownerName)
-	{
+
+	public void setOwnerName(String ownerName) {
 		this.ownerName = ownerName;
 	}
-	public String getAccountType()
-	{
+
+	public String getAccountType() {
 		return accountType;
 	}
-	public void setAccountType(String accountType)
-	{
+
+	public void setAccountType(String accountType) {
 		this.accountType = accountType;
 	}
-	public String getTitle()
-	{
+
+	public String getTitle() {
 		return title;
 	}
-	public void setTitle(String title)
-	{
+
+	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getAddress()
-	{
+
+	public String getAddress() {
 		return address;
 	}
-	public void setAddress(String address)
-	{
+
+	public void setAddress(String address) {
 		this.address = address;
 	}
-	public String getPhoneNumber()
-	{
+
+	public String getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(String phoneNumber)
-	{
+
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-	public String getMobileNumber()
-	{
+
+	public String getMobileNumber() {
 		return mobileNumber;
 	}
-	public void setMobileNumber(String mobileNumber)
-	{
+
+	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
-	public String getEmailId()
-	{
+
+	public String getEmailId() {
 		return emailId;
 	}
-	public void setEmailId(String emailId)
-	{
+
+	public void setEmailId(String emailId) {
 		this.emailId = emailId;
 	}
-	public String getAlterNateEmailId()
-	{
+
+	public String getAlterNateEmailId() {
 		return alterNateEmailId;
 	}
-	public void setAlterNateEmailId(String alterNateEmailId)
-	{
+
+	public void setAlterNateEmailId(String alterNateEmailId) {
 		this.alterNateEmailId = alterNateEmailId;
 	}
-	public String getSubcriptionStartDate()
-	{
+
+	public String getSubcriptionStartDate() {
 		return subcriptionStartDate;
 	}
-	public void setSubcriptionStartDate(String subcriptionStartDate)
-	{
+
+	public void setSubcriptionStartDate(String subcriptionStartDate) {
 		this.subcriptionStartDate = subcriptionStartDate;
 	}
-	public String getSubscriptionEndDate()
-	{
+
+	public String getSubscriptionEndDate() {
 		return subscriptionEndDate;
 	}
-	public void setSubscriptionEndDate(String subscriptionEndDate)
-	{
+
+	public void setSubscriptionEndDate(String subscriptionEndDate) {
 		this.subscriptionEndDate = subscriptionEndDate;
 	}
-	public Double getAmountPaid()
-	{
+
+	public Double getAmountPaid() {
 		return amountPaid;
 	}
-	public void setAmountPaid(Double amountPaid)
-	{
+
+	public void setAmountPaid(Double amountPaid) {
 		this.amountPaid = amountPaid;
 	}
-	public String getCreatedBy()
-	{
+
+	public String getCreatedBy() {
 		return createdBy;
 	}
-	public void setCreatedBy(String createdBy)
-	{
+
+	public void setCreatedBy(String createdBy) {
 		this.createdBy = createdBy;
 	}
-	public String getCreatedDate()
-	{
+
+	public String getCreatedDate() {
 		return createdDate;
 	}
-	public void setCreatedDate(String createdDate)
-	{
+
+	public void setCreatedDate(String createdDate) {
 		this.createdDate = createdDate;
 	}
-	public String getLastUpdatedBy()
-	{
+
+	public String getLastUpdatedBy() {
 		return lastUpdatedBy;
 	}
-	public void setLastUpdatedBy(String lastUpdatedBy)
-	{
+
+	public void setLastUpdatedBy(String lastUpdatedBy) {
 		this.lastUpdatedBy = lastUpdatedBy;
 	}
-	public String getLastUpdatedDate()
-	{
+
+	public String getLastUpdatedDate() {
 		return lastUpdatedDate;
 	}
-	public void setLastUpdatedDate(String lastUpdatedDate)
-	{
+
+	public void setLastUpdatedDate(String lastUpdatedDate) {
 		this.lastUpdatedDate = lastUpdatedDate;
 	}
-	public boolean hasOid()
-	{
+
+	public boolean hasOid() {
 		return GenericUtils.isNotNull(getOid());
 	}
-	public boolean hasAccountId()
-	{
+
+	public boolean hasAccountId() {
 		return GenericUtils.isNotNullOrEmpty(getAccountId());
 	}
-	
-	public boolean hasPassword()
-	{
+
+	public boolean hasPassword() {
 		return GenericUtils.isNotNullOrEmpty(getPassword());
 	}
-	
-	public boolean hasAccountType()
-	{
+
+	public boolean hasAccountType() {
 		return GenericUtils.isNotNullOrEmpty(getAccountType());
 	}
-	
-	public boolean hasOwnerName()
-	{
+
+	public boolean hasOwnerName() {
 		return GenericUtils.isNotNullOrEmpty(getOwnerName());
 	}
-	
-	public boolean hasEmailId()
-	{
+
+	public boolean hasEmailId() {
 		return GenericUtils.isNotNullOrEmpty(getEmailId());
 	}
-	
-	public boolean hasAlterNateEmailId()
-	{
+
+	public boolean hasAlterNateEmailId() {
 		return GenericUtils.isNotNullOrEmpty(getAlterNateEmailId());
 	}
-	
-	public boolean hasSubcriptionStartDate()
-	{
+
+	public boolean hasSubcriptionStartDate() {
 		return GenericUtils.isNotNullOrEmpty(getSubcriptionStartDate());
 	}
-	
-	public boolean hasSubscriptionEndDate()
-	{
+
+	public boolean hasSubscriptionEndDate() {
 		return GenericUtils.isNotNullOrEmpty(getSubscriptionEndDate());
 	}
 
-	public HttpServletResponse getServletResponse() 
-	{
+	public HttpServletResponse getServletResponse() {
 		return servletResponse;
 	}
 
-	public void setServletResponse(HttpServletResponse servletResponse) 
-	{
+	public void setServletResponse(HttpServletResponse servletResponse) {
 		this.servletResponse = servletResponse;
 	}
 
-	public HttpServletRequest getServletRequest() 
-	{
+	public HttpServletRequest getServletRequest() {
 		return servletRequest;
 	}
 
-	public void setServletRequest(HttpServletRequest servletRequest) 
-	{
+	public void setServletRequest(HttpServletRequest servletRequest) {
 		this.servletRequest = servletRequest;
 	}
-	
-	
+
 }

@@ -1,10 +1,9 @@
 package com.portal.constants;
 
-import org.springframework.context.support.StaticApplicationContext;
+import java.text.SimpleDateFormat;
 
-
-public class Fields 
-{
-	//public static final String USER_ID = "userId";
+public class Fields {
 	
+	public static final SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+
 }

@@ -40,19 +40,19 @@
 		<servlet-name>DBStartUpServlet</servlet-name>
 		<servlet-class>com.servlet.DBStartUpServlet</servlet-class> 
 		<load-on-startup>1</load-on-startup>
-	</servlet>
+	</servlet>	
 	
 	<filter>     
 		<filter-name>authenticationFilter</filter-name>     
 		<filter-class>com.filter.AuthenticationFilter</filter-class>     
 		<init-param>         
-			<param-name>test-param</param-name>         
-			<param-value>This parameter is for testing.</param-value>     
+			<param-name>test-param</param-name>       
+			<param-value>This parameter is for testing</param-value>     
 		</init-param> 
 	</filter>
 	<filter-mapping>
 		<filter-name>authenticationFilter</filter-name>     
-		<url-pattern>/portal/*</url-pattern> 
+		<url-pattern>/portal/viewProduct.action</url-pattern> 
 	</filter-mapping>    
     <filter-mapping>
 		<filter-name>authenticationFilter</filter-name>
@@ -78,6 +78,11 @@
         <filter-name>struts2</filter-name> 
         <url-pattern>/login/*</url-pattern> 
 	</filter-mapping>
+	<filter-mapping>
+        <filter-name>struts2</filter-name>
+        <url-pattern>/jsp/*</url-pattern>
+    </filter-mapping>
+	
 
 	<context-param>
 	  <param-name>jmesaPreferencesLocation</param-name> 
@@ -114,11 +119,22 @@
 		<display-name>Download</display-name>
 		<servlet-name>Download</servlet-name>
 		<servlet-class>
-		com.poratl.servlet.Download</servlet-class>
+		com.portal.servlet.Download</servlet-class>
+	</servlet>
+	<servlet>
+		<description>
+		</description>
+		<display-name>SubscribeServlet</display-name>
+		<servlet-name>SubscribeServlet</servlet-name>
+		<servlet-class>com.portal.servlet.SubscribeServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Download</servlet-name>
 		<url-pattern>/Download/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SubscribeServlet</servlet-name>
+		<url-pattern>/SubscribeServlet/*</url-pattern>
 	</servlet-mapping>
 	<error-page>
         <error-code>500</error-code>

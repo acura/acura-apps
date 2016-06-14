@@ -1,6 +1,5 @@
 package com.portal.service;
 
-public abstract class CommonService  
-{
-	
+public abstract class CommonService {
+
 }

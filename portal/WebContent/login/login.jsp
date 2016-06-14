@@ -10,7 +10,6 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=7" />
 	<sx:head parseContent="true"/>
 <style type="text/css">
-
 body,td,th {
 	font-size: 11pt;
 	font-weight: 300;
@@ -50,11 +49,9 @@ a:active {
 	color: #40537B;
 	font-weight: bold;
 }
-
 </style>
 
 <script type="text/javascript">
-
 function changeWidthHomePage(srcElement)
 	{
 		var wd = parseInt(srcElement.style.width);
@@ -64,20 +61,16 @@ function changeWidthHomePage(srcElement)
 			srcElement.style.width = wd - ((screen.width/1250)*70);
 		else
 			srcElement.style.width = wd - ((screen.width/1250)*6);
-
 	}
-
 	function changeWidth(srcElement)
 	{
 		srcElement.style.width = screen.width - ((screen.width/1250)*43);
 	}
-
 function MM_preloadImages() { //v3.0
   var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
     var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
     if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
 }
-
 function goToLogin() 
 {
 	document.forms["loginPage"].submit();
@@ -529,8 +522,6 @@ and smaller &nbsp;&nbsp;hospitals. </span></td>
 </body>
 
 <script type="text/javascript">
-
-
 	changeWidth(document.getElementById('imageTable'));
 	changeWidthHomePage(document.getElementById('header_img_01'));
 	changeWidthHomePage(document.getElementById('header_img_02'));
@@ -565,7 +556,6 @@ and smaller &nbsp;&nbsp;hospitals. </span></td>
 	changeWidthHomePage(document.getElementById('header_img_31'));
 	changeWidthHomePage(document.getElementById('header_img_32'));
 	changeWidthHomePage(document.getElementById('header_img_33'));
-
 </script>
 
 </html>
