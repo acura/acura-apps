@@ -4,7 +4,6 @@ import java.net.URLDecoder;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Enumeration;
-import java.util.Hashtable;
 import java.util.StringTokenizer;
 
 import javax.servlet.ServletContext;
@@ -15,17 +14,25 @@ import javax.servlet.http.HttpSession;
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.interceptor.ServletRequestAware;
 import org.apache.struts2.interceptor.ServletResponseAware;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jms.core.JmsTemplate;
 
 import com.ccavenue.security.AesCryptUtil;
 import com.portal.constants.CcavenueParams;
 import com.portal.domain.Account;
-import com.portal.domain.PortalConstant;
+import com.portal.domain.AccountJms;
+import com.sarathi.constants.CcavenueConstant;
 
 public class ResponseHandlerAction extends AccountAction implements ServletRequestAware, ServletResponseAware {
 
+	private static final long serialVersionUID = 1L;
 	private HttpServletResponse httpServletResponse;
 	private HttpServletRequest httpServletRequest;
 	private ServletContext servletContext;
+	@Autowired
+	private JmsTemplate jmsTemplate;
 	
 
 	public String execute() throws Exception {
@@ -36,7 +43,7 @@ public class ResponseHandlerAction extends AccountAction implements ServletReque
 		Account account = (Account) session.getAttribute("account");
 		System.out.println("subscription type===" + session.getAttribute("subscriptionType"));
 		
-		String workingKey = PortalConstant.workingKey;
+		String workingKey = CcavenueConstant.workingKey;
 
 		String encryptedResponse = httpServletRequest.getParameter("encResp");
 		System.out.println("encryptedResponse======" + encryptedResponse);
@@ -96,6 +103,7 @@ public class ResponseHandlerAction extends AccountAction implements ServletReque
 			//	session.setAttribute("subscriptionEndDate", newDate);
 				// getAccountService().updateSubscriptionEndDate(account,
 				// newDate);
+				
 				account.setSubscriptionEndDate(newDate);
 				account.setSubcriptionStartDate(new Date());
 				String text = (String) CcavenueParams.ccavenueParamHM.get("amount"); // example String
@@ -103,7 +111,23 @@ public class ResponseHandlerAction extends AccountAction implements ServletReque
 
 				account.setAmountPaid((value));
 				account.setLastUpdatedDate(new Date());
-				getAccountService().updateAccount(account);
+				if(account != null) {
+					getAccountService().updateAccount(account);
+					AccountJms accountJms = new AccountJms();
+					accountJms.setAccountId(account.getAccountId());
+					accountJms.setSubcriptionStartDate(account.getSubcriptionStartDate());
+					accountJms.setSubscriptionEndDate(account.getSubscriptionEndDate());
+					try {
+						System.out.println("jms exception..........");
+						System.out.println("jmsTemplate:::"+jmsTemplate==null);
+						ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContextJms.xml");
+					    JmsTemplate jmsTemplate = ctx.getBean("jmsTemplate", JmsTemplate.class);
+						jmsTemplate.convertAndSend("portal_queue", accountJms);
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+			
 
 				System.out.println("return success");
 

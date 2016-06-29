@@ -2,8 +2,8 @@
 	language="java"
 	contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@page import="com.portal.domain.PortalConstant"%>
 <%@page import="java.util.Date"%>
+<%@page import="com.sarathi.constants.CcavenueConstant"%>
 <%@page import="com.portal.domain.Account"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -11,7 +11,7 @@
 <meta
 	http-equiv="Content-Type"
 	content="text/html; charset=UTF-8">
-<title>Payment Result</title>
+<title>Subscribe</title>
 </head>
 <meta
 	http-equiv="Content-Type"
@@ -25,6 +25,19 @@
 	content="IE=7" />
 <sx:head parseContent="true" />
 <style type="text/css">
+select {
+	width: 100%;
+    padding: 5px;
+    margin: 0px;
+    border: 1px solid #CCC;
+}
+input
+  {
+    width: 98%;
+    padding: 5px;
+    margin: 0px;
+    border: 1px solid #CCC;
+  }
 body, td, th {
 	font-size: 11pt;
 	font-weight: 300;
@@ -309,8 +322,12 @@ a:active {
 																								<td
 																									colspan="2"
 																									background="../images/portalImage/box_top_bg.jpg">
-																									<span class="style65"> Your Subscription
-																										Ended </span>
+																									<%if(session.getAttribute("created") != null) {
+																										if(session.getAttribute("created").equals("true")) { session.removeAttribute("created"); %>
+																									<span class="style65">Hello <%= ac.getOwnerName() %> your account id has been created but you have to subcribe by payment </span>
+																									<%} } else { %>
+																									<span class="style65"> Your Subscription Ended </span>
+																									<%}%>
 																								</td>
 																								<td
 																									width="17"
@@ -351,7 +368,7 @@ a:active {
 	<tr align="center" >
 		<td colspan="2"><b>Compulsory information</b></td>
 	</tr>
-	<tr>
+	<tr align="center">
 		<td>Your subscription ends on</td>
 		<td><input type="text" disabled="disabled" name="merchant_id" id="merchant_id" value="<%= ac.getSubscriptionEndDate() %>" readonly="true" /></td>
 	</tr>
@@ -366,7 +383,7 @@ a:active {
 				<td>Order Id</td>
 				<td><input type="text" name="order_id" value="1" /></td>
 			</tr>
-			<tr><td>Subscription Type</td>
+			<tr align="center"><td>Subscription Type</td>
 				<td>
 					<select id="subscription_type" name="subscription" onchange="changeAmount(value)">
 						<option value="NONE">--- Select ---</option> 
@@ -375,68 +392,66 @@ a:active {
 					</select> 
 				</td>
 			</tr>
-			<tr>
-				<tr><td>Currency</td>
-					<td>
-						<select id="currency_id" name="currency" onchange="changeAmount2(value)">
-							<option value="inr">INR</option> 
-						   <option value="usd">USD</option>
-						</select> 
-					</td>
-				</tr>
+			<tr align="center"><td>Currency</td>
+				<td>
+					<select id="currency_id" name="currency" onchange="changeAmount2(value)" >
+						<option value="inr">INR</option> 
+					   <option value="usd">USD</option>
+					</select> 
+				</td>
+			</tr>
 				<!-- <td>Currency</td>
 				<td><input type="text" name="currency" value="INR" /></td> -->
-			</tr>
-			<tr>
+			<tr align="center">
 				<td>Amount</td>
 				<td><input id="amount_id" type="text" name="amount" value="" readonly="true" required  /></td>
 			</tr>
 			<tr style="display: none;">
 				<td>Redirect URL</td>
-				<td><input type="text" name="redirect_url" value= <%=PortalConstant.REDIRECT_URL%> />
+				<td><input type="text" name="redirect_url" value= <%=CcavenueConstant.REDIRECT_URL%> />
 				</td>
 			</tr>
 			<tr style="display: none;">
 				<td>Cancel URL</td>
-				<td><input type="text" name="cancel_url" value= <%=PortalConstant.REDIRECT_URL%> />
+				<td><input type="text" name="cancel_url" value= <%=CcavenueConstant.REDIRECT_URL%> />
 				</td>
 			</tr>
 			<tr style="display: none;">
 				<td>Language</td>
 				<td><input type="text" name="language" id="language" value="EN" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td colspan="2"><b>Billing information(optional):</b></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing Name</td>
 				<td><input type="text" name="billing_name" value="<%= userName_var %>" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing Address:</td>
 				<td><input type="text" name="billing_address" value="<%=address_var%>" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing City:</td>
 				<td><input type="text" name="billing_city" value="" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing State:</td>
 				<td><input type="text" name="billing_state" value="" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing Zip:</td>
 				<td><input type="text" name="billing_zip" value="411041" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing Country:</td>
 				<td><input type="text" name="billing_country" value="India" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing Mobile Number:</td>
 				<td><input type="text" name="billing_tel" value="<%=mobileNumber_var%>" readonly="true" /></td>
 			</tr>
-			<tr>
+			<tr align="center">
 				<td>Billing Email:</td>
 				<td><input type="text" name="billing_email" value="<%=emailId_var%>"  readonly="true" /></td>
 			</tr>

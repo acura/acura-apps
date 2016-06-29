@@ -17,9 +17,8 @@
 			<result name="success">/jsp/</result>
 		</action> -->
 
-		<action name="logout" class="com.login.action.LoginAction"> <result 
+		<action name="logout" class="com.login.action.LoginAction" method="logout"> <result 
 			name="success" type="redirectAction">../login/login.action</result> </action>
-
 	</package>
 
 </struts>

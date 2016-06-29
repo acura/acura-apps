@@ -48,7 +48,6 @@ public class AccountDAO {
 				accountDB.setLastUpdatedDate(new Date());
 
 				Transaction tx = session.beginTransaction();
-				session.update(accountDB);
 				tx.commit();
 			} else {
 				account.setCreatedDate(new Date());

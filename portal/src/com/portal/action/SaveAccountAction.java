@@ -9,7 +9,9 @@ import com.util.mail.EmailUtils;
 import java.util.Date;
 
 public class SaveAccountAction extends AccountAction {
+	
 	public String execute() throws Exception {
+		System.out.println("saveaccountaction.......................");
 		Integer oid = savePortalAccount();
 		System.out.println("Oid : " + oid);
 		return SUCCESS;
@@ -88,15 +90,19 @@ public class SaveAccountAction extends AccountAction {
 		} else if (EmailUtils.validateEmailId(getEmailId())) {
 			if (!hasOid()) {
 				String recipients[] = { getEmailId() };
-				String from = "amol.acura@gmail.com";
+				String from = "swaprad@gmail.com";
 				String subject = "Checking Email Id exist";
 				String bodyMessage = "Testing Email ID";
 
-				try {
+				/*try {
+					System.out.println("SaveAccountAction:::");
+					System.out.println("mails==="+getEmailId());
+					System.out.println("from ==="+from);
+					System.out.println("");
 					EmailUtils.sendSSLMessage(recipients, subject, bodyMessage, from, "");
 				} catch (Exception e) {
 					addFieldError("emailId", "Email Id does not exist");
-				}
+				}*/
 			}
 		} else {
 			addFieldError("emailId", "Invalid Email Id");

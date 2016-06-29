@@ -29,6 +29,7 @@
         <action name="viewProduct" class="com.portal.action.ViewProductAction">
         	<result name="input" type="redirectAction">subscribe</result>
         	<result name="success">/portal/viewProductMenu.jsp</result>
+        	<result name="error">../login/login.action</result>
         </action>
         
         <action name="subscribe" class="com.login.action.SubscribeAction">
@@ -41,6 +42,19 @@
         
         <action name="logout" class="com.login.action.LoginAction" method="logout"> <result 
 			name="logout" type="redirectAction">../login/login.action</result>
+		</action>
+		
+		<action name="viewRole" class="com.login.action.LoginAction" method="logout"> <result 
+			name="logout" type="redirectAction">../login/login.action</result>
+		</action>
+		
+		<action name="save_customer" class="com.portal.action.Register">
+			<result name="error">/portal/register.jsp</result>
+			<result name="success" type="redirectAction">../portal/subscribe.action</result>
+		</action>
+		<action name="proceed_payment" class="com.portal.action.PaymentAction">
+			<result name="success">/jsp/payment_result.jsp</result>
+			<result name="error">/login/login.jsp</result>
 		</action>
         
     </package>

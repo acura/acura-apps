@@ -20,24 +20,17 @@ public class ViewProductAction extends ActionSupport implements ServletRequestAw
 	private ServletContext servletContext;
 
 	public String execute() throws Exception {
-		
-		HttpServletRequest request=ServletActionContext.getRequest();  
-		HttpSession session=request.getSession();
-		
-		String accountId = (String) session.getAttribute("accountId");
-		Date subscriptionEndDate = (Date) session.getAttribute("subscriptionEndDate");
-		
-		System.out.println("viewProduct execute...............................");
-		 
-		System.out.println("subscriptionEndDate========"+session.getAttribute("subscriptionEndDate"));
-		System.out.println("account id==========="+accountId);
-		
-		if (subscriptionEndDate.compareTo(new Date()) < 0) {
-			System.out.println("ViewProductAction:::return subscribe....................................");
+			HttpServletRequest request=ServletActionContext.getRequest();  
+			HttpSession session=request.getSession();
 			
-			return INPUT;
-		}
-		return SUCCESS;
+			String accountId = (String) session.getAttribute("accountId");
+			Date subscriptionEndDate = (Date) session.getAttribute("subscriptionEndDate");
+			
+			if (subscriptionEndDate.compareTo(new Date()) > 0) {
+				return SUCCESS;
+			} else {
+				return INPUT;
+			}
 	}
 
 	public HttpServletResponse getServletResponse() {

@@ -35,7 +35,6 @@ public class LoginAction extends AccountAction implements ServletRequestAware, S
 	private String password;
 	private String loginValidation;
 	private String signon;
-	private String subScriptionEndDate;
 
 	public String execute() throws Exception {
 		if (getServletRequest().getParameter("signon") != null) {
@@ -51,10 +50,7 @@ public class LoginAction extends AccountAction implements ServletRequestAware, S
 				if (account != null) {
 					getServletRequest().getSession().setAttribute(PortalConstant.ACCOUNT_ID, account.getAccountId());
 					getServletRequest().getSession().setAttribute("subscriptionEndDate", account.getSubscriptionEndDate());
-					System.out.println("subscriptionEndDate===="+account.getSubscriptionEndDate());
 					 HttpSession session = request.getSession();
-				     session.setAttribute("accountId", account.getAccountId());
-				     session.setAttribute("subscriptionEndDate", account.getSubscriptionEndDate());
 				     session.setAttribute("account", account);
 				     
 				} else {
@@ -71,6 +67,8 @@ public class LoginAction extends AccountAction implements ServletRequestAware, S
 	}
 	
 	public String logout() {
+		HttpSession session = request.getSession();
+		session.invalidate();
 		return "logout";
 	}
 

@@ -96,7 +96,7 @@ function goToLogin()
                     </tr>
                     <tr>
                       <td bgcolor="#FFFFFF"><span class="style71">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Contact Us Call: 020-3267 0355 , 94230 04767<br />
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: amol.gadre@acurasoftwares.com</span></td>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email: amol.gadre@acurasoftwares.com <br/> 
                       <td><img src="${pageContext.request.contextPath}/images/portalImage/header2_img2.jpg" width="626" height="40" /></td>
                     </tr>
                   </table></td>
@@ -474,6 +474,11 @@ and smaller &nbsp;&nbsp;hospitals. </span></td>
                                     <td align="right" background="../images/portalImage/table_bg1.jpg" class="style70">1,000.00&nbsp;</td>
                                     <td align="right" background="../images/portalImage/table_bg1.jpg" class="style70">5,00.00&nbsp;</td>
                                     <td align="right" background="../images/portalImage/table_bg1.jpg" class="style70">5,000.00&nbsp;</td>
+                                  </tr>
+                                  <tr>
+                                    <td height="60" colspan="10" align="center" valign="middle" background="../images/portalImage/easy-prescription-bg.jpg">
+                                    	<a href="/portal/portal/register.jsp" ><img src="${pageContext.request.contextPath}/images/portalImage/register.png" width="334" height="60" /></a></td>
+                                    
                                   </tr>
                               </table></td>
                               <td>&nbsp;</td>

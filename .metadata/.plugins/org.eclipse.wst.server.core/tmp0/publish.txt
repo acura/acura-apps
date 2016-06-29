@@ -1,3 +1,0 @@
-#Tomcat publish data
-#Fri Jun 17 12:49:06 IST 2016
-org.eclipse.jst.j2ee.server\:portal-server=WEB-INF/lib/portal-server.jar

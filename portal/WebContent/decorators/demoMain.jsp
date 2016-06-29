@@ -5,7 +5,6 @@
 <html>
 
 	<head>
-      <jsp:include page="../hms/include.jsp"></jsp:include>
 		<decorator:head/>
 	</head>
 

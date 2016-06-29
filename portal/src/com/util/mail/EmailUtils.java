@@ -23,7 +23,7 @@ import javax.mail.internet.MimeMultipart;
 
 public class EmailUtils {
 	private static final String SMTP_HOST_NAME = "smtp.gmail.com";
-	private static final String SMTP_PORT = "465";
+	private static final String SMTP_PORT = "587";
 	// private static final String emailMsgTxt = "Test Message Contents";
 	// private static final String emailSubjectTxt = "A test from gmail";
 	// private static final String emailFromAddress =
@@ -56,7 +56,7 @@ public class EmailUtils {
 
 		Session session = Session.getDefaultInstance(props, new javax.mail.Authenticator() {
 			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication("amol.acura@gmail.com", "coeb2003");
+				return new PasswordAuthentication("swaprad@gmail.com", "");
 			}
 		});
 

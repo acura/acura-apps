@@ -22,7 +22,8 @@ body {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	background-image: url(file:///C|/Documents and Settings/Reshu/Desktop/images/body-bg.jpg);
+	/* background-image: url(file:///C|/Documents and Settings/Reshu/Desktop/images/body-bg.jpg); */
+	background-image: url("gradient_bg.png");
 	background-repeat: repeat;
 	background-image: url();
 	background-color: #E9E9E9;
@@ -92,7 +93,7 @@ function goToLogin()
     <th align="center" scope="col"><table width="100%" border="0" cellspacing="0" cellpadding="0">
 
       <tr>
-        <th align="left" valign="bottom" scope="col"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+        <th align="left" valign="/home/acura/AAllJarFiles/Servlet/servlet-api.jarbottom" scope="col"><table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
             <tr>
               <th align="left" valign="bottom" scope="col"><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#E9E9E9">
                 <tr>
@@ -160,7 +161,7 @@ function goToLogin()
                                   <td align="center" class="style57" width="300" > Subscription Ends On:<%= session.getAttribute("subscriptionEndDate") %></td>
                                     <td height="60" colspan="2" align="right" valign="top" class="style57" >
                                     
-                                    <a href="http://hms.sarathisoftech.com/hms-web/hms/prolabLogin" target="_blank">
+                                    <a href="http://apps.sarathisoftech.com/hms-web/hms/prolabLogin" target="_blank">
                                     	<img src="${pageContext.request.contextPath}/images/portalImage/pro_lab_header_img.jpg" width="304" height="60" />
                                    	</a>
                                    	</td>
@@ -181,7 +182,7 @@ function goToLogin()
                                   <tr>
                                   <td align="center" class="style57" width="300" > Subscription Ends On:<%= session.getAttribute("subscriptionEndDate") %></td>
                                     <td height="60" colspan="2" align="right" class="style57">
-                                    	<a href="http://hms.sarathisoftech.com/hms-web/login/login.action?optionParam=GYNOSOFt_PLUS" target="_blank">
+                                    	<a href="http://apps.sarathisoftech.com/hms-web/login/login.action?optionParam=GYNOSOFt_PLUS" target="_blank">
                                     		<img src="${pageContext.request.contextPath}/images/portalImage/gynosoft_table_img.jpg" width="304" height="60" />
                                     	</a>                                      
                                    	</td>
